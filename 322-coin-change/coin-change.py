@@ -10,13 +10,12 @@ class Solution:
         dp[0] = 0
         #print(dp)
         for i in range(1,m+1):
-            if i in coins: dp[i] = 1
-            else:
-                for c in coins:
-                    if i-c < 0: continue
-                    try:
-                        dp[i] = minNone(dp[i],dp[i-c]+1)
-                    except: continue
+          
+            for c in coins:
+                if i-c < 0: continue
+                try:
+                    dp[i] = minNone(dp[i],dp[i-c]+1)
+                except: continue
             #print(dp)
         if dp[-1]:
             return dp[-1]
