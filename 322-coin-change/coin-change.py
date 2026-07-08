@@ -5,6 +5,7 @@ class Solution:
             elif b is None: return a
             else: return min(a,b)
         if m == 0: return 0
+        coins = set(coins)
         dp = [None]*(m+1)
         dp[0] = 0
         #print(dp)
