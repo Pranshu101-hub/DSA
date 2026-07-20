@@ -16,4 +16,19 @@ class Solution:
                     dp[i][j] = max(dp[i-1][j],dp[i][j-1])
                 #print('-')
                 #print(dp)
+        #print(dp)
+        #code to print the string
+        sn = ''
+        i,j = m,n
+        while i!=0 and j!=0:
+            if s2[i-1] == s1[j-1]:
+                sn = s2[i-1]+sn
+                i-=1
+                j-=1
+            else:
+                if dp[i-1][j] > dp[i][j-1]:
+                    i-=1
+                else:
+                    j-=1
+        print(sn)
         return dp[-1][-1]
